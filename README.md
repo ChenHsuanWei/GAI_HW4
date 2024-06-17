@@ -16,5 +16,6 @@ python main.py
 
 每15個epoch會儲存一次圖片，已寫好路徑將圖片儲存在資料夾results中
 打開資料夾即可查看結果
+
 ![範例圖片](images/screenshot.png)
 
