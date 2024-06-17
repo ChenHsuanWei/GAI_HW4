@@ -1,5 +1,10 @@
 # GAI_HW4
 
+## 執行需要安裝的套件
+```bash
+pip install torch torchvision pillow numpy
+```
+
 ## 如何執行程式
 
 執行主程式main.py，便會開始進行模型訓練
