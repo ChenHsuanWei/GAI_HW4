@@ -63,10 +63,13 @@ def train_DIP(dip_model, target_img, noisy_images, num_epochs=500, lr=0.001):
         current_psnr = psnr(output, noisy_images[epoch % len(noisy_images)])
         psnr_history.append(current_psnr)
 
-        # 每20個epoch保存一次結果
-        if epoch % 15 == 0 and epoch>0:
+        # 每15個epoch保存一次結果
+        if epoch % 10 == 0 and epoch>0:
             print(f'Epoch [{epoch}/{num_epochs}], Loss: {loss.item():.4f}, PSNR: {current_psnr:.4f}')
             save_image(output, f'GAI_HW4/results/output_{epoch}.png')
+        else:
+            print(f'Epoch [{epoch}/{num_epochs}], Loss: {loss.item():.4f}, PSNR: {current_psnr:.4f}')
+
 
         # 停止條件
         if len(psnr_history) > 300 and all(psnr_history[-1] <= psnr for psnr in psnr_history[-10:]):#len(psnr_history) > 300 and
